@@ -138,7 +138,7 @@ class BasicAgent:
 
         return SystemMessage(content=system_prompt)
     
-    def create_vector_store() -> SupabaseVectorStore:
+    def create_vector_store(self) -> SupabaseVectorStore:
         embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2") #  dim=768
         supabase = create_client(os.environ.get("SUPABASE_URL"), 
                                  os.environ.get("SUPABASE_SERVICE_KEY"))
